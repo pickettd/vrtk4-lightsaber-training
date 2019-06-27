@@ -10,6 +10,11 @@ public class AutoGrabSaber : MonoBehaviour
     void Start()
     {
         GetComponent<InteractorFacade>().Grab(saberToGrab);
+        DigitalRuby.LaserSword.LaserSwordScript findSword = saberToGrab.GetComponentInChildren<DigitalRuby.LaserSword.LaserSwordScript>();
+        if (findSword)
+        {
+            findSword.Activate();
+        }
     }
 
     // Update is called once per frame

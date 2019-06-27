@@ -283,10 +283,12 @@
         [CalledAfterChangeOf(nameof(IsConsumerRigidbodyKinematic))]
         protected virtual void OnAfterConsumerRigidbodyIsKinematicChange()
         {
-            if (GrabSetup.Facade.ConsumerRigidbody == null)
+            if (GrabSetup == null || GrabSetup.Facade == null || GrabSetup.Facade.ConsumerRigidbody == null)
             {
                 return;
             }
+            
+        
 
             GrabSetup.Facade.ConsumerRigidbody.isKinematic = IsConsumerRigidbodyKinematic;
         }

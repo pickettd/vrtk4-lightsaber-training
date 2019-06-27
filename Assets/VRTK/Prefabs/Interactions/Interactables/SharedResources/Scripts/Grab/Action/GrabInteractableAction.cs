@@ -57,6 +57,10 @@
         /// <param name="data">The grabbing object.</param>
         public virtual void NotifyGrab(GameObject data)
         {
+            if (GrabSetup == null)
+            {
+                return;
+            }
             GrabSetup.NotifyGrab(data);
         }
 
